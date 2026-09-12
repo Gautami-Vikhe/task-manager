@@ -3,6 +3,8 @@ import { RouterOutlet } from '@angular/router';
 import { Header } from './header/header';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { task } from './task';
+
 
 @Component({
   selector: 'app-root',
@@ -12,16 +14,11 @@ import { CommonModule } from '@angular/common';
 })
 export class App {
   taskName='';
-  tasks:string[]=[];
 
-  addTask(){
-    if(this.taskName.trim()){
-      this.tasks.push(this.taskName);
-      this.taskName='';
-    }
+  constructor(public task: task){}
+
+  onAddTask(){
+    this.task.addTask(this.taskName);
+    this.taskName=''
   }
-  removeTask(index:number){
-    this.tasks.splice(index,1);
-  }
-  protected readonly title = signal('task-manager');
 }
