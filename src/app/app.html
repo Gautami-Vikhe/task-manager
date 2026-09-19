@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header [title]="'My Task Manager'" (titleClicked)="onHeaderTitleClicked()"></app-header>
 <div style="padding: 20px;">
     <input [(ngModel)]="taskName" placeholder="Enter a task"/>
     <button [disabled]="!taskName.trim()" (click)="onAddTask()">Add Task</button>

@@ -27,4 +27,7 @@ export class App implements OnInit {
     this.task.addTask(this.taskName);
     this.taskName=''
   }
+  onHeaderTitleClicked(){
+    console.log('Header title was clicked!');
+  }
 }
