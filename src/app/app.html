@@ -1,14 +1,2 @@
-<app-header [title]="'My Task Manager'" (titleClicked)="onHeaderTitleClicked()"></app-header>
-<div style="padding: 20px;">
-    <input [(ngModel)]="taskName" placeholder="Enter a task"/>
-    <button [disabled]="!taskName.trim()" (click)="onAddTask()">Add Task</button>
-
-    <p *ngIf="task.tasks.length==0">No tasks yet-add one above!</p>
-
-
-    <ul>
-        <li *ngFor="let t of task.tasks; let i = index">{{t}}
-            <button (click)="task.removeTask(i)">Remove</button>
-        </li>
-    </ul>
-</div>
+<app-header [title]="'My Task Manager'"></app-header>
+<router-outlet></router-outlet>
