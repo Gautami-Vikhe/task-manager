@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class Tasks implements OnInit {
   taskName='';
+  today=new Date();
 
   constructor(public task: task){
     console.log('Constructor called');
